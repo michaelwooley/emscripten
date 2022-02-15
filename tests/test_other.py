@@ -10061,6 +10061,11 @@ Aborted(Module.arguments has been replaced with plain arguments_ (the initial va
     self.assertNotEqual(result.returncode, 0)
     self.assertIn('EM_ASM does not work in -std=c* modes, use -std=gnu* modes instead', result.stderr)
 
+  def test_em_asm_i64(self):
+    self.set_setting('WASM_BIGINT')
+    self.do_other_test('test_em_asm_i64.cpp')
+    self.do_other_test('test_em_asm_i64.cpp', force_c=True)
+
   def test_boost_graph(self):
     self.do_runf(test_file('test_boost_graph.cpp'), emcc_args=['-sUSE_BOOST_HEADERS'])
 
