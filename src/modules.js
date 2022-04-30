@@ -37,6 +37,7 @@ global.LibraryManager = {
     let libraries = [
       'library.js',
       'library_formatString.js',
+      'library_mem_ops.js',
       'library_math.js',
       'library_path.js',
       'library_syscall.js',
